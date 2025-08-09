@@ -5,20 +5,20 @@
 class Pgterm < Formula
   desc "PostgreSQL CLI like MySQL"
   homepage "https://github.com/mattb2401/pgterm"
-  version "1.2.4"
+  version "1.2.5"
 
   on_macos do
     on_intel do
-      url "https://github.com/mattb2401/pgterm/releases/download/v1.2.4/pgterm_1.2.4_darwin_amd64.tar.gz"
-      sha256 "b5544cb8973eaff4e45356b0bca23a5454215f70516e616ee997502317a9ccaf"
+      url "https://github.com/mattb2401/pgterm/releases/download/v1.2.5/pgterm_1.2.5_darwin_amd64.tar.gz"
+      sha256 "cc64102d52f72af611c29402d8c86a966218bd2f17906826a26b5bda5def914a"
 
       def install
         bin.install "pgterm"
       end
     end
     on_arm do
-      url "https://github.com/mattb2401/pgterm/releases/download/v1.2.4/pgterm_1.2.4_darwin_arm64.tar.gz"
-      sha256 "3b6d66a5ab0bd124336a23dfbf49648cfefa8189ca6b5510ba97c130d5d1fd5e"
+      url "https://github.com/mattb2401/pgterm/releases/download/v1.2.5/pgterm_1.2.5_darwin_arm64.tar.gz"
+      sha256 "b268bf71df7ea20697678f92ffdcaa39a5bfb7907dc49422038ad149a40a6d02"
 
       def install
         bin.install "pgterm"
@@ -29,8 +29,8 @@ class Pgterm < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/mattb2401/pgterm/releases/download/v1.2.4/pgterm_1.2.4_linux_amd64.tar.gz"
-        sha256 "ba8e872fab265d0f827a85916dba5b69688a8d29d8dd0c7b55b72086f22c918a"
+        url "https://github.com/mattb2401/pgterm/releases/download/v1.2.5/pgterm_1.2.5_linux_amd64.tar.gz"
+        sha256 "bbb363621f7f415e57614bebda6878edeec4835079eb6b9d6b1b1b960eced3ca"
 
         def install
           bin.install "pgterm"
@@ -39,8 +39,8 @@ class Pgterm < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/mattb2401/pgterm/releases/download/v1.2.4/pgterm_1.2.4_linux_arm64.tar.gz"
-        sha256 "ac7959bf8d4f633dc5be46ee0575d1ae2198a7757c86b8a62c6ae83fa6c9d7c8"
+        url "https://github.com/mattb2401/pgterm/releases/download/v1.2.5/pgterm_1.2.5_linux_arm64.tar.gz"
+        sha256 "4ca9fa51b6eb7ab48fd1b1f40b5791ca853d942f54f9cccea021935fb353f024"
 
         def install
           bin.install "pgterm"
