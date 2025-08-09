@@ -5,20 +5,20 @@
 class Pgterm < Formula
   desc "PostgreSQL CLI like MySQL"
   homepage "https://github.com/mattb2401/pgterm"
-  version "1.0.3"
+  version "1.2.4"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/mattb2401/pgterm/releases/download/v1.0.3/pgterm_Darwin_x86_64.tar.gz"
-      sha256 "6e3fd1cce6fd0b57f4d329317216657640c1de69b55c9a61d314f5015e4c6e67"
+    on_intel do
+      url "https://github.com/mattb2401/pgterm/releases/download/v1.2.4/pgterm_1.2.4_darwin_amd64.tar.gz"
+      sha256 "b5544cb8973eaff4e45356b0bca23a5454215f70516e616ee997502317a9ccaf"
 
       def install
         bin.install "pgterm"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/mattb2401/pgterm/releases/download/v1.0.3/pgterm_Darwin_arm64.tar.gz"
-      sha256 "f0c9c56e6d84fc58b1bcc137fc2eafeffdf8d500dbe494bb00b80cb52865e7a5"
+    on_arm do
+      url "https://github.com/mattb2401/pgterm/releases/download/v1.2.4/pgterm_1.2.4_darwin_arm64.tar.gz"
+      sha256 "3b6d66a5ab0bd124336a23dfbf49648cfefa8189ca6b5510ba97c130d5d1fd5e"
 
       def install
         bin.install "pgterm"
@@ -27,18 +27,24 @@ class Pgterm < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/mattb2401/pgterm/releases/download/v1.0.3/pgterm_Linux_x86_64.tar.gz"
-      sha256 "a4455580b5d64cf6fed3ac38613703c40a135c19b2e82c55ea9d2db4f1c09f8a"
-      def install
-        bin.install "pgterm"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/mattb2401/pgterm/releases/download/v1.2.4/pgterm_1.2.4_linux_amd64.tar.gz"
+        sha256 "ba8e872fab265d0f827a85916dba5b69688a8d29d8dd0c7b55b72086f22c918a"
+
+        def install
+          bin.install "pgterm"
+        end
       end
     end
-    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/mattb2401/pgterm/releases/download/v1.0.3/pgterm_Linux_arm64.tar.gz"
-      sha256 "bac19398ed4848eb35c9f588a0f0edef28fd81a64ada0120878e65a5e92a0c3f"
-      def install
-        bin.install "pgterm"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/mattb2401/pgterm/releases/download/v1.2.4/pgterm_1.2.4_linux_arm64.tar.gz"
+        sha256 "ac7959bf8d4f633dc5be46ee0575d1ae2198a7757c86b8a62c6ae83fa6c9d7c8"
+
+        def install
+          bin.install "pgterm"
+        end
       end
     end
   end
